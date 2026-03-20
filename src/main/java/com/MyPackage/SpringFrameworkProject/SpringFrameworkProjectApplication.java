@@ -7,7 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringFrameworkProjectApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(SpringFrameworkProjectApplication.class, args);
+		System.out.println("srinath");
 	}
 
 }
