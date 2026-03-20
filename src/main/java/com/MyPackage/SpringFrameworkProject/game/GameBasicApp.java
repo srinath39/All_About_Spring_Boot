@@ -1,10 +1,7 @@
-package com.MyPackage.SpringFrameworkProject;
+package com.MyPackage.SpringFrameworkProject.game;
 
 
-import com.MyPackage.SpringFrameworkProject.game.GameRunner;
-import com.MyPackage.SpringFrameworkProject.game.PacmanGame;
-
-public class App01GamingBasicJava {
+public class GameBasicApp{
 
 	public static void main(String[] args) {
 		
