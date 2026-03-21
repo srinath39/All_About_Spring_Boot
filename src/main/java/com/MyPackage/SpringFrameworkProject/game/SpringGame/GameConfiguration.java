@@ -1,6 +1,5 @@
 package com.MyPackage.SpringFrameworkProject.game.SpringGame;
 
-import com.MyPackage.SpringFrameworkProject.game.GameBasicApp;
 import com.MyPackage.SpringFrameworkProject.game.GameRunner;
 import com.MyPackage.SpringFrameworkProject.game.GamingConsole;
 import com.MyPackage.SpringFrameworkProject.game.PacmanGame;

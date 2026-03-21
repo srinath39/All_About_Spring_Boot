@@ -1,9 +1,12 @@
 package com.MyPackage.SpringFrameworkProject.game;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class PacmanGame implements GamingConsole{
-	
+
 	public void up() {
-		System.out.println("up");
+		System.out.println("up Pacman");
 	}
 
 	public void down() {
