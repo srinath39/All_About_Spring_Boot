@@ -14,7 +14,7 @@ class BusinessLogicClass{
     private DependencyA dependencyA;
     private DependencyB dependencyB;
 
-    @Autowired
+    // By default without @Autowired annotation also we can perform constructor-based injection
     public BusinessLogicClass(DependencyA dependencyA, DependencyB dependencyB) {
         this.dependencyA = dependencyA;
         this.dependencyB = dependencyB;
