@@ -1,0 +1,60 @@
+package com.MyPackage.SpringFrameworkProject.DependencyInjection.Exercise;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
+
+import java.util.Arrays;
+
+
+@Component
+class BusinessCalculationService{
+    private DataService dataService;
+
+    // By default without @Autowired annotation also we can perform constructor-based injection
+    public BusinessCalculationService(DataService dataService){
+        this.dataService = dataService;
+    }
+
+    public int findMax() {
+        return Arrays.stream(dataService.retrieveData()).max().orElse(0);
+    }
+}
+
+interface DataService{
+    public int[] retrieveData();
+}
+
+@Component
+@Primary
+class MongoDbDataService implements DataService {
+
+    @Override
+    public int[] retrieveData() {
+        return new int[]{11,22,33,44,55};
+    }
+}
+
+@Component
+class MySqlDataService implements DataService{
+
+    @Override
+    public int[] retrieveData() {
+        return new int[]{1,2,3,4,5};
+    }
+}
+
+
+@Configuration
+@ComponentScan
+public class BusinessCalculationServiceLauncher {
+    public static void main(String[] args) {
+
+        try (var context = new AnnotationConfigApplicationContext(BusinessCalculationServiceLauncher.class)) {
+//            Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
+            System.out.println(context.getBean(BusinessCalculationService.class).findMax());
+        }
+    }
+}
