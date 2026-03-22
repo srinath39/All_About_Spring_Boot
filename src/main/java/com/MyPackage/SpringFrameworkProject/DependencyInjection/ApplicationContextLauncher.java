@@ -15,11 +15,16 @@ class BusinessLogicClass{
     private DependencyB dependencyB;
 
     @Autowired
+    public BusinessLogicClass(DependencyA dependencyA, DependencyB dependencyB) {
+        this.dependencyA = dependencyA;
+        this.dependencyB = dependencyB;
+    }
+
+
     public void setDependencyA(DependencyA dependencyA) {
         this.dependencyA = dependencyA;
     }
 
-    @Autowired
     public void setDependencyB(DependencyB dependencyB) {
         this.dependencyB = dependencyB;
     }
