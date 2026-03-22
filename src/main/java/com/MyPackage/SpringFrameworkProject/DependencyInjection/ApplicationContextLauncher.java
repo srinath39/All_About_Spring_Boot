@@ -10,12 +10,19 @@ import java.util.Arrays;
 
 @Component
 class BusinessLogicClass{
-    // Field Injection
-    @Autowired
+    // Setter and Getter  Injection
     private DependencyA dependencyA;
+    private DependencyB dependencyB;
 
     @Autowired
-    private DependencyB dependencyB;
+    public void setDependencyA(DependencyA dependencyA) {
+        this.dependencyA = dependencyA;
+    }
+
+    @Autowired
+    public void setDependencyB(DependencyB dependencyB) {
+        this.dependencyB = dependencyB;
+    }
 
     public String toString(){
         return dependencyA +" and "+dependencyB;
