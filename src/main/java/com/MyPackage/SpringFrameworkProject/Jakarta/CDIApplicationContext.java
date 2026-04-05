@@ -34,5 +34,5 @@ public class CDIApplicationContext {
         try(var context=new AnnotationConfigApplicationContext(CDIApplicationContext.class)){
             Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
         }
-    }s
+    }
 }
