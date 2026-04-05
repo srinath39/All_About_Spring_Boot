@@ -29,7 +29,6 @@ public class ApplicationContextLauncher {
         try(var context=new AnnotationConfigApplicationContext(ApplicationContextLauncher.class)){
             System.out.println(context.getBean(Flight.class));
             System.out.println(context.getBean(Flight.class));
-            System.out.println(context.getBean(Flight.class));
         }
     }
 }
