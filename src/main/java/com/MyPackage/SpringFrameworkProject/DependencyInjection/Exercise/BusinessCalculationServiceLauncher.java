@@ -5,11 +5,14 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 
 
-@Component
+//@Component
+@Service
 class BusinessCalculationService{
     private DataService dataService;
 
@@ -27,8 +30,9 @@ interface DataService{
     public int[] retrieveData();
 }
 
-@Component
+//@Component
 @Primary
+@Repository
 class MongoDbDataService implements DataService {
 
     @Override
@@ -37,7 +41,8 @@ class MongoDbDataService implements DataService {
     }
 }
 
-@Component
+//@Component
+@Repository
 class MySqlDataService implements DataService{
 
     @Override
